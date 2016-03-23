@@ -9,6 +9,8 @@ enable :sessions
 #   redirect '/links/index'
 # end
 
+ENV['RACK_ENV'] ||= 'development'
+
 get '/' do
   @links = Link.all
   erb :'links/index'
